@@ -1,0 +1,19 @@
+body {
+    background-color: #232B2B;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+h1 {
+    color: #DC3D24;
+    margin-left: 20px;
+}
+h3 {
+    color: #DC3D24;
+    margin-left: 20px;
+}
+li {
+	color:#FFFFFF;
+}
+a {
+	color:#E3AE57;
+}
