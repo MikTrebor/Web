@@ -10,14 +10,14 @@ function startGame() {
 	if (!clicked) {
 		document.getElementById("timer").innerHTML = numToTime(curTime);
 		window.setInterval(decrementTime, 1000);
-		//	window.setInterval(checkInput, 10);
+		window.setInterval(checkInput, 10);
 		clicked = true
 	}
 }
 
 function checkInput() {
 	console.log("checking input");
-	var input = document.getElementById("league").innerHTML;
+	var input = document.getElementById("league").value;
 	console.log("input:" + input);
 	if (mode == "NFL") {
 		if ((afcteams.indexOf(input) >= 0) || (nfcteams.indexOf(input) >= 0)) {
@@ -35,6 +35,9 @@ function numToTime(num) {
 	if (num % 60 == 0) {
 		return Math.round(num / 60) + ":" + "00";
 	}
+	if (num % 60 < 10) {
+		return Math.round(num / 60) + ":" + "0" + (num % 60);
+	}
 	else {
 		return (Math.round(num / 60) - 1) + ":" + (num % 60);
 	}
@@ -44,7 +47,7 @@ function decrementTime() {
 	console.log("decrementtTime was called");
 	curTime--;
 	document.getElementById("timer").innerHTML = numToTime(curTime);
-	checkInput();
+	//checkInput();
 }
 
 var NFL = "NFL";
