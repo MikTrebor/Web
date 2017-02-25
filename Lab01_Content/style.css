@@ -1,3 +1,17 @@
+#startButton {
+	margin: auto 0;
+	text-align: center;
+}
+
+.divHide {
+	display: none;
+}
+
+.divShow {
+	margin: auto;
+	text-align: center;
+}
+
 body {
 	background-image: url("background.jpg");
 	background-position: top;
@@ -51,46 +65,10 @@ div {
 form {
 	margin: auto;
 	text-align: center;
+	width: 75%;
 }
 
 a {
 	font-size: 30px;
 	font-weight: bold;
-}
-
-.NFChead {
-	background-color: #003B66;
-}
-
-.NFC {
-	background-color: #C4CED4;
-}
-
-.AFChead {
-	background-color: #D71019;
-}
-
-.AFC {
-	background-color: #FF8F8F;
-}
-
-.Westhead {
-	background-color: #ED174B;
-}
-
-.West {
-	background-color: #BB9856;
-}
-
-.Easthead {
-	background-color: #0366AC;
-}
-
-.East {
-	background-color: #C4CED4;
-}
-
-#startButton {
-	margin: auto 0;
-	text-align: center;
 }

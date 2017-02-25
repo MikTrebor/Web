@@ -11,20 +11,21 @@
 
 	<div>
 		<h3>Sports Team Trivia</h3>
-		<button onclick="createTable(NBA)">NBA</button>
-		<button onclick="createTable(NFL)">NFL</button>
 	</div><br>
+	<div>
+		<button onclick="createTable(NBA)" id="NFLStart">NBA</button>
+		<button onclick="createTable(NFL)" id="NBAStart">NFL</button>
+	</div>
 	<div>
 		<button onclick="startGame()" id="startButton">Start</button>
 	</div>
 	<div>
-		<h1 id="timer">TIME</h1>
+		<h1 id="timer">Choose a league</h1>
 	</div>
-	<form id="form">
-		<input type="text" id="league">
-		<!--<input type="submit" value="Submit">-->
+	<form onSubmit="return false" id="form" disabled>
+		<input type="text" id="team">
 	</form><br>
-	<div>
+	<div id="tables">
 		<table border="3" bordercolor="black" id="div1table"></table><br>
 		<table border="3" bordercolor="black" id="div2table"></table>
 	</div>

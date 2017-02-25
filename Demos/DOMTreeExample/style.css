@@ -4,8 +4,10 @@ body {
 
 div {
     background-color: #cdc7db;
+    padding: 10px;
 }
 
 div div {
     background-color: #afc1aa;
+    margin: 20px;
 }
