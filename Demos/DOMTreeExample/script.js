@@ -1,5 +1,6 @@
 function clickFunction() {
-    //console.log(event);
+    console.log(event);
     var tgt = event.target;
-    console.log(tgt);
+    var children = tgt.childNodes;
+    console.log(children);
 }

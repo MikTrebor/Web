@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Lab 01</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+
+<body>
+
+	<div>
+		<h3>Sports Team Trivia</h3>
+	</div><br>
+	<div>
+		<button onclick="createTable(NBA)" id="NFLStart">NBA</button>
+		<button onclick="createTable(NFL)" id="NBAStart">NFL</button>
+		<button onclick="createTable(NHL)" id="NHLStart">NHL</button>
+		<button onclick="createTable(MLB)" id="MLBStart">MLB</button>
+	</div>
+	<div>
+		<button onclick="startGame()" id="startButton">Start</button>
+	</div>
+	<div>
+		<h1 id="timer">Choose a league</h1>
+	</div>
+	<form onSubmit="return false" id="form" disabled>
+		<input type="text" id="team">
+	</form><br>
+	<div id="tables">
+		<table border="3" bordercolor="black" id="div1table"></table><br>
+		<table border="3" bordercolor="black" id="div2table"></table>
+	</div>
+	<div>
+		<a HREF="../index.html">Back to main index</a>
+	</div>
+</body>
+
+</html>
