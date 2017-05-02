@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Socket Demo</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script>
+        var name = prompt("What's your name?");
+        var socket = io();
+        var messages = [];
+        var length = 5
+        socket.on("smessage", function(data) {
+            fillMessages(data)
+        });
+
+        function sendData() {
+            document.getElementById("user").innerHTML = name;
+
+            var object = {
+                name: name,
+                message: document.getElementById("input").value
+            };
+            socket.emit("cmessage", object);
+            // fillMessages(object);
+        }
+
+        function fillMessages(obj) {
+            messages.push(obj);
+            if (messages.length > length) {
+                messages.shift();
+            }
+            for (var x = 1; x <= messages.length; x++) {
+                console.log(x)
+                document.getElementById(x + "").innerHTML = messages[x - 1].name + ": " + messages[x - 1].message;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>robert's awesome page</h1>
+    <div>
+        <div id="1"></div>
+        <div id="2"></div>
+        <div id="3"></div>
+        <div id="4"></div>
+        <div id="5"></div>
+    </div>
+    <span id="user"></span>
+    <input type="text" id="input">
+    <button id="submit" onClick="sendData()">Send</button>
+</body>
+
+</html>

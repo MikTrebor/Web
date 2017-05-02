@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>First AJAX Page!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        function sendRequest() {
+            // console.log("some code works")
+            var myZip = $("#zipcode").val();
+            $.ajax({
+                url: "http://api.openweathermap.org/data/2.5/weather?zip=" + myZip + ",us&appid=fbb3594791fc5e35f476a3014f104927",
+                success: function(response) {
+                        console.log(response);
+                    }
+                    // },
+                    // data: {
+                    //     zip: myZip + ",us",
+                    //     appid: "fbb3594791fc5e35f476a3014f104927"
+                    // }
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <input id="zipcode" type="number">
+    <button onClick="sendRequest()">Send The Request</button>
+    <div id="outputDiv"></div>
+</body>
+
+</html>

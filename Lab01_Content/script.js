@@ -1,12 +1,13 @@
-//var leaguename = ["leaguename",	confs,	div1,	div2,	div1teams,	div2teams,
-//					0				1		2		3		4			5
-//					div1headcolor,	div2headcolor,	div1color,	div2color]
-//					6				7				8			9
 window.onload = function() {
 	document.getElementById("tables").className = "divHide";
 	document.getElementById("form").className = "divHide";
 	document.getElementById("startButton").className = "divHide";
 };
+//var leaguename = ["leaguename",	confs,	div1,	div2,	div1teams,	div2teams,
+//					0				1		2		3		4			5
+//					div1headcolor,	div2headcolor,	div1color,	div2color]
+//					6				7				8			9
+
 var nflconfs = ["NFC", "AFC"];
 var nfcdivs = ["NFC North", "NFC South", "NFC East", "NFC West"];
 var afcdivs = ["AFC North", "AFC South", "AFC East", "AFC West"];

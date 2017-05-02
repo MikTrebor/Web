@@ -1,0 +1,14 @@
+img {
+    width: 100px;
+    margin: auto;
+}
+
+div {
+    text-align: center;
+}
+
+span {
+    font-size: 40px;
+    font-weight: bold;
+    padding: 40px;
+}
