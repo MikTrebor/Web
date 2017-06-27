@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Poker</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+        var config = {
+            apiKey: "AIzaSyDz3jyzynkwIQ-SBrLFnswlBUl6uY4wU40",
+            authDomain: "web-final-project-c098e.firebaseapp.com",
+            databaseURL: "https://web-final-project-c098e.firebaseio.com",
+            projectId: "web-final-project-c098e",
+            storageBucket: "web-final-project-c098e.appspot.com",
+            messagingSenderId: "261700186331"
+        };
+        firebase.initializeApp(config);
+        var rootRef = firebase.database().ref();
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+    <script src="script.js"></script>
+    <!--http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg-->
+
+
+
+
+    <!--FIREBASE-->
+
+
+
+
+    <!--FIREBASE-->
+
+
+
+
+</head>
+
+<body>
+    <div id="middle">
+        <img class="mid" id="one" src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+        <img class="mid" id="two" src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+        <img class="mid" id="three" src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+        <img class="mid" id="four" src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+        <img class="mid" id="five" src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+    </div>
+    <div><span id="announcements">Place your bets</span></div>
+    <div><span id="pot">Pot: </span></div>
+    <div>
+        <button id="dealMeIn" onClick="dealMeIn()">Deal Me In!</button>
+        <button id="betted" onClick="betted()" disabled>Bet</button>
+        <input id="betamount">
+    </div>
+    <table>
+        <tr>
+            <td>
+                <div id="players">
+                    <table class="hand" id="p1">
+                        <tr>
+                            <th>
+                                <span class="name">Player</span>
+                            </th>
+                            <th>
+                                <span>Chips</span>
+                            </th>
+                            <th>
+                                <span>Bet</span>
+                            </th>
+                            <th>
+                                <span>Record</span>
+                            </th>
+                            <th>
+                                <span>Hand</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                            </td>
+                            <td>
+                                <span class="chips">Chips</span>
+                            </td>
+                            <td>
+                                <span class="bet">Bet</span>
+                            </td>
+                            <td>
+                                <span class="record">Record</span>
+                            </td>
+                            <td>
+                                <span class="picked">Hand</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="hand" id="p2">
+                        <tr>
+                            <th>
+                                <span class="name">Player</span>
+                            </th>
+                            <th>
+                                <span>Chips</span>
+                            </th>
+                            <th>
+                                <span>Bet</span>
+                            </th>
+                            <th>
+                                <span>Record</span>
+                            </th>
+                            <th>
+                                <span>Hand</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                            </td>
+                            <td>
+                                <span class="chips">Chips</span>
+                            </td>
+                            <td>
+                                <span class="bet">Bet</span>
+                            </td>
+                            <td>
+                                <span class="record">Record</span>
+                            </td>
+                            <td>
+                                <span class="picked">Hand</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="hand" id="p3">
+                        <tr>
+                            <th>
+                                <span class="name">Player</span>
+                            </th>
+                            <th>
+                                <span>Chips</span>
+                            </th>
+                            <th>
+                                <span>Bet</span>
+                            </th>
+                            <th>
+                                <span>Record</span>
+                            </th>
+                            <th>
+                                <span>Hand</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                            </td>
+                            <td>
+                                <span class="chips">Chips</span>
+                            </td>
+                            <td>
+                                <span class="bet">Bet</span>
+                            </td>
+                            <td>
+                                <span class="record">Record</span>
+                            </td>
+                            <td>
+                                <span class="picked">Hand</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="hand" id="p4">
+                        <tr>
+                            <th>
+                                <span class="name">Player</span>
+                            </th>
+                            <th>
+                                <span>Chips</span>
+                            </th>
+                            <th>
+                                <span>Bet</span>
+                            </th>
+                            <th>
+                                <span>Record</span>
+                            </th>
+                            <th>
+                                <span>Hand</span>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                                <img src="http://chetart.com/blog/wp-content/uploads/2012/05/playing-card-back.jpg"></img>
+                            </td>
+                            <td>
+                                <span class="chips">Chips</span>
+                            </td>
+                            <td>
+                                <span class="bet">Bet</span>
+                            </td>
+                            <td>
+                                <span class="record">Record</span>
+                            </td>
+                            <td>
+                                <span class="picked">Hand</span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </td>
+            <td>
+                <div id="chatDiv">
+                    <div><span id="chat1"></span></div>
+                    <div><span id="chat2"></span></div>
+                    <div><span id="chat3"></span></div>
+                    <div><span id="chat4"></span></div>
+                    <div><span id="chat5"></span></div>
+                    <span id="speaker"></span>
+                    <input type="text" id="input">
+                    <button id="chatSubmit" onClick="sendChat()">Send</button>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <a id="highRoll"></a>
+</body>
+
+</html>

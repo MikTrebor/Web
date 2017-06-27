@@ -1,0 +1,43 @@
+body {
+    background-image: url("http://www.outrageousfortunes.co.uk/wp-content/uploads/2015/05/poker-table-felt.jpg");
+}
+
+img {
+    width: 100px;
+    margin: auto;
+}
+
+.p1 {
+    border-style: groove dotted;
+    border-color: #33436d;
+}
+
+.chatDiv {
+    color: white;
+    /*background-color: white*/
+}
+
+div {
+    text-align: center;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+}
+
+th {
+    text-align: center;
+}
+
+.hand img {
+    width: 50px;
+}
+
+span {
+    color: white;
+}

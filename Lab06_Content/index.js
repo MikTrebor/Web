@@ -3,6 +3,10 @@ var app = express();
 var http = require("http").Server(app);
 var io = require("socket.io")(http);
 var path = require("path");
+
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('highScores.db');
+
 //Set up display HTML
 
 //Start our server
@@ -51,6 +55,16 @@ var starts = [{
     ];
 var timer;
 var speed = 100;
+
+function addData(name, time) {
+    db.all("SELECT * FROM TIMES", function(err, rows) {
+        if (!err) {
+            rows.forEach(function(row) {
+                console.log(row.first_name, row.last_name);
+            });
+        }
+    });
+}
 
 function resetBoard() {
     clearInterval(timer);
